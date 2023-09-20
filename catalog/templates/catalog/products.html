@@ -10,6 +10,10 @@
                  alt="Card image cap">
             <div class="card-body">
                 <p class="card-text">{{ object.name|title }}</p>
+                <div class="btn-group">
+                        <a href="{% url 'catalog:product_item' %}" type="button"
+                           class="btn btn-sm btn-outline-secondary">Перейти</a>
+                    </div>
             </div>
         </div>
     </div>

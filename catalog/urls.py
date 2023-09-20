@@ -5,7 +5,7 @@ from django.contrib import admin
 from catalog.apps import CatalogConfig
 from django.urls import path
 
-from catalog.views import home, contacts, categories, products
+from catalog.views import home, contacts, categories, products, product_item
 
 app_name = CatalogConfig.name
 
@@ -15,4 +15,5 @@ urlpatterns = [
                   path('contacts/', contacts, name='contacts'),
                   path('categories/', categories, name='categories'),
                   path('<int:pk>/catalog/', products, name='products'),
+                  path('<int:pk>/catalog/', product_item, name='product_item'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

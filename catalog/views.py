@@ -45,9 +45,9 @@ def products(request, pk):
     return render(request, 'catalog/products.html', context)
 
 
-def product_item(request):
+def product_item(request, pk):
     context = {
-        'object_list': Product.objects.filter(),
-        'title': 'Страница товара'
+        'object': Product.objects.get(pk=pk),
+        'title': f'Страница товара'
     }
     return render(request, 'catalog/product_item.html', context)

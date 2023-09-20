@@ -10,7 +10,8 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Наименование товара {{ object.name|title }}</h3>
+                <p class="card-text">{{ object.name }}</p>
+                <h3 class="card-title">Наименование товара {{ object.name }}</h3>
                 <p class="card-text">Описание товара: {{ object.description }}</p>
                 <h3 class="card-text">Цена {{ object.price }} руб.</h3>
             </div>

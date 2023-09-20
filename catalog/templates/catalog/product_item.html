@@ -2,15 +2,17 @@
 {% load my_tags %}
 {% block content %}
 <div class="row">
-    <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
+    <div class="card-group">
+        <div class="card">
             <img class="card-img-top"
                  src="{{ object.photo|mymedia }}"
                  alt="Card image cap">
+        </div>
+        <div class="card">
             <div class="card-body">
-                <p class="card-text">{{ object.name|title }}</p>
-                <p class="card-text">{{ object.description }}</p>
-                <p class="card-text">{{ object.price }}</p>
+                <h3 class="card-title">Наименование товара {{ object.name|title }}</h3>
+                <p class="card-text">Описание товара: {{ object.description }}</p>
+                <h3 class="card-text">Цена {{ object.price }} руб.</h3>
             </div>
         </div>
     </div>

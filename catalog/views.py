@@ -48,6 +48,6 @@ def products(request, pk):
 def product_item(request):
     context = {
         'object_list': Product.objects.filter(),
-        'title': 'Товар'
+        'title': 'Страница товара'
     }
     return render(request, 'catalog/product_item.html', context)

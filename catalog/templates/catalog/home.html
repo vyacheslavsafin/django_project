@@ -11,7 +11,7 @@
                 <p class="card-text">{{ object.description|truncatechars:100 }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <a href="{% url 'catalog:product_item' object.pk %}" type="button"
+                        <a href="{% url 'catalog:product_item' pk=object.pk %}" type="button"
                            class="btn btn-sm btn-outline-secondary">Перейти</a>
                     </div>
                 </div>

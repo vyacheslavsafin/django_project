@@ -16,5 +16,5 @@ urlpatterns = [
                   path('contacts/', contacts, name='contacts'),
                   path('categories/', categories, name='categories'),
                   path('<int:pk>/catalog/', products, name='products'),
-                  path('product_item/<int:pk>/', views.product_item, name='product_item'),
+                  path('product_item/<int:pk>', views.product_item, name='product_item'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

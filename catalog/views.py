@@ -1,53 +1,49 @@
 from django.shortcuts import render
-
-from django.http import HttpResponse
-
 from catalog.models import Category, Product
+from django.views.generic import ListView, DetailView, TemplateView
 
 
-# def home(request):
-#     print(request.GET)
-#     return HttpResponse('OK')
-
-def home(request):
-    context = {
-        'object_list': Product.objects.all(),
+class HomeView(TemplateView):
+    template_name = 'catalog/home.html'
+    extra_context = {
         'title': 'Главная страница'
     }
-    return render(request, 'catalog/home.html', context)
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['object_list'] = Product.objects.all()
+        return context_data
 
 
-def contacts(request):
-    context = {
+class ContactsView(TemplateView):
+    template_name = 'catalog/contacts.html'
+    extra_context = {
         'title': 'Контакты'
     }
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        print(f'{name} ({email})')
-    return render(request, 'catalog/contacts.html', context)
 
 
-def categories(request):
-    context = {
-        'object_list': Category.objects.all(),
+class CategoryListView(ListView):
+    model = Category
+    extra_context = {
         'title': 'Категории товаров'
     }
-    return render(request, 'catalog/categories.html', context)
 
 
-def products(request, pk):
-    category_item = Category.objects.get(pk=pk)
-    context = {
-        'object_list': Product.objects.filter(category_id=pk),
-        'title': f'Продукты - {category_item.name}'
-    }
-    return render(request, 'catalog/products.html', context)
+class ProductListView(ListView):
+    model = Product
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(category_id=self.kwargs.get('pk'))
+        return queryset
+
+    def get_context_data(self, *args, **kwargs):
+        context_data = super().get_context_data(*args, **kwargs)
+
+        category_item = Category.objects.get(pk=self.kwargs.get('pk'))
+        context_data['title'] = f'Продукты - {category_item.name}'
+        return context_data
 
 
-def product_item(request, pk):
-    context = {
-        'object': Product.objects.get(pk=pk),
-        'title': f'Страница товара'
-    }
-    return render(request, 'catalog/product_item.html', context)
+class ItemDetailView(DetailView):
+    model = Product

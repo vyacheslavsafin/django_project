@@ -12,11 +12,11 @@
                     </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="{% url 'blog:view' object.pk %}"
+                            <a href="{% url 'blog:view' object.slug %}"
                                 class="btn btn-sm btn-outline-secondary">View</a>
-                            <a href="{% url 'blog:edit' object.pk %}" type="button"
+                            <a href="{% url 'blog:edit' object.slug %}" type="button"
                                 class="btn btn-sm btn-outline-secondary">Edit</a>
-                            <a href="{% url 'blog:delete' object.pk %}" type="button"
+                            <a href="{% url 'blog:delete' object.slug %}" type="button"
                                 class="btn btn-sm btn-outline-danger">Delete</a>
                         </div>
 

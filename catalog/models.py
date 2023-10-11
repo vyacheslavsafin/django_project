@@ -33,4 +33,16 @@ class Product(models.Model):
         verbose_name_plural = 'Продукты'
         ordering = ('name',)
 
-# Create your models here.
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, verbose_name='Продукт', on_delete=models.CASCADE)
+    version_number = models.PositiveIntegerField(verbose_name='Номер версии')
+    version_name = models.CharField(max_length=100, verbose_name='Имя версии')
+    current_version = models.BooleanField(verbose_name='Текущая версия', default=False)
+
+    def __str__(self):
+        return f'{self.product} - {self.version_name}'
+
+    class Meta:
+        verbose_name = 'Версия'
+        verbose_name_plural = 'Версии'

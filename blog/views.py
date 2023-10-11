@@ -38,6 +38,9 @@ class BlogUpdateView(UpdateView):
 
 class BlogListView(ListView):
     model = Post
+    extra_context = {
+        'title': 'Новости'
+    }
 
     def get_queryset(self, *args, **kwargs):
         queryset = super().get_queryset(*args, **kwargs)

@@ -13,6 +13,11 @@
                 <p class="card-text">{{ object.name }}</p>
                 <h3 class="card-title">Наименование товара {{ object.name }}</h3>
                 <p class="card-text">Описание товара: {{ object.description }}</p>
+                {% for version in object.version_set.all %}
+                    {% if version.current_version %}
+                        <p class="card-text text-muted">{{ version.version_name }}</p>
+                    {% endif %}
+                {% endfor %}
                 <h3 class="card-text">Цена {{ object.price }} руб.</h3>
             </div>
         </div>

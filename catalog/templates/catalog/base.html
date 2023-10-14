@@ -47,6 +47,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+        <div class="btn-group">
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'users:profile' %}" class="text-white">Профиль</a></li>
+                <li><a href="{% url 'users:logout' %}" class="text-white">Выйти</a></li>
+            {% else %}
+                <li><a href="{% url 'users:login' %}" class="text-white">Войти</a></li>
+                <li><a href="{% url 'users:register' %}" class="text-white">Регистрация</a></li>
+            {% endif %}
+        </div>
     </div>
 </header>
 

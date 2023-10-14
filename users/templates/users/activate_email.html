@@ -1,0 +1,4 @@
+{% autoescape off %}
+    Для подтверждения регистрации перейдите по ссылке:
+    http://{{ domain }}{% url 'users:activate' uidb64=uid token=token %}
+{% endautoescape %}

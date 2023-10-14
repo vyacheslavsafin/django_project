@@ -78,7 +78,7 @@
       "description": "Саундбар LG SN5R — это мощная (520 Вт), удобная в управления аудиосистема, которая используется в домашних кинотеатрах. Сабвуфер закрытого типа обеспечивает объемное звучание 4.1, хорошо слышимое из любой точки комнаты. «Умное» устройство автоматически анализирует поступающий контент и подстраивает звук, исходя из полученных данных.   Поддержка Bluetooth дает возможность управлять моделью дистанционно, со смартфона, что повышает удобство эксплуатации. Внешние носители подключаются через выходы HDMI, порт USB 2.0 типа А, оптический вход. Колонки можно крепить на стену. В наборе поставляются аксессуары для настенной установки. Размеры — 89х8,5х5,7 см, вес — 10,1 кг.",
       "image": "catalog/soundbar.jpg",
       "category": 27,
-      "price": 29999,
+      "price": 28999,
       "date_created": "2023-09-19T21:34:35Z",
       "date_updated": "2023-09-19T21:34:35Z"
     }
@@ -133,6 +133,129 @@
       "price": 159999,
       "date_created": "2023-09-19T21:38:47Z",
       "date_updated": "2023-09-19T21:38:47Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 25,
+    "fields": {
+      "name": "Ноутбук для бизнеса Lenovo ThinkPad X1 Extreme Gen 5",
+      "description": "Ноутбук для бизнеса Lenovo ThinkPad X1 Extreme Gen 5 функционирует на основе 14-ядерного процессора Intel Core i7 12800H 2.4 ГГц, который обеспечивает высокую работоспособность и многозадачность. Контроллер GeForce RTX 3070 Ti 8GB осуществляет быструю обработку графической составляющей цифровых данных. Объем жесткого диска составляет 2 ТБ, объем оперативной памяти достигает 64 ГБ. Эти характеристики позволяют наполнить устройство необходимым количеством приложений и цифровых информационных файлов. Подачу питания осуществляет штатный аккумулятор, емкости которого достаточно для 11 ч рабочего процесса.  Ноутбук оборудован матовым экраном диагональю 16\" с технологией IPS и частотой обновления 60 Гц, который отличается высокой цветопередачей, яркостью и контрастностью, широкими углами обзора. Штатная клавиатура дополнена подсветкой клавиш, что позволяет использовать ее даже в условиях слабого освещения. Камера высокого разрешения осуществляет запись видео и видеозвонки с высоким качеством картинки. За беспроводную передачу данных отвечают модули Wi-Fi и Bluetooth. Для безопасного входа в устройство предусмотрено наличие датчика отпечатков пальцев. Конструкция модели включает в себя интерфейсы HDMI, USB 3.2 тип A, USB 4 тип C, Thunderbolt 4, разъем для карты памяти формата SD и разъем для подключения наушников или микрофона 3,5 мм.",
+      "image": "catalog/lenovo_wRDaBLa.png",
+      "category": 25,
+      "price": 449990,
+      "date_created": "2023-10-13T00:00:00Z",
+      "date_updated": "2023-10-13T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 12,
+      "version_number": 1,
+      "version_name": "Версия 1",
+      "current_version": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 11,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 13,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 17,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "product": 10,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 6,
+    "fields": {
+      "product": 16,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 7,
+    "fields": {
+      "product": 15,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 8,
+    "fields": {
+      "product": 14,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 9,
+    "fields": {
+      "product": 12,
+      "version_number": 2,
+      "version_name": "Версия 2.1.1",
+      "current_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 10,
+    "fields": {
+      "product": 25,
+      "version_number": 1,
+      "version_name": "Версия 1.0.0",
+      "current_version": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 11,
+    "fields": {
+      "product": 25,
+      "version_number": 1,
+      "version_name": "Версия 1.0.1",
+      "current_version": true
     }
   }
 ]

@@ -18,6 +18,7 @@
                         <p class="card-text text-muted">{{ version.version_name }}</p>
                     {% endif %}
                 {% endfor %}
+                <p class="card-text">Владелец: {{ product.owner|default:'Эльдовидео' }}</p>
                 <h3 class="card-text">Цена {{ object.price }} руб.</h3>
             </div>
         </div>

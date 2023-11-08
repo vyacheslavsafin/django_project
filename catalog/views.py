@@ -1,8 +1,10 @@
 from django.forms import inlineformset_factory
+from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from catalog.forms import ProductForm, VersionForm
 from catalog.models import Category, Product, Version
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
+from catalog.services import categories_get_cache
 
 
 class HomeView(TemplateView):
@@ -24,11 +26,16 @@ class ContactsView(TemplateView):
     }
 
 
-class CategoryListView(ListView):
-    model = Category
-    extra_context = {
-        'title': 'Категории товаров'
-    }
+def categories(request):
+    category_list = categories_get_cache()
+    return render(request, 'catalog/categories.html', {'object_list': category_list})
+
+
+# class CategoryListView(ListView):
+#     model = Category
+#     extra_context = {
+#         'title': 'Категории товаров'
+#     }
 
 
 class ProductListView(ListView):
